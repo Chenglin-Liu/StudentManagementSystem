@@ -35,19 +35,19 @@ CREATE TABLE IF NOT EXISTS Course(
     briefDescription VARCHAR(100),
     teacherID        INT,
     term             VARCHAR(10),
-    PRIMARY KEY(id, term),
+    PRIMARY KEY(code, term),
     FOREIGN KEY (teacherID) REFERENCES Teacher(id)
 );
 
 -- ENROL
 CREATE TABLE IF NOT EXISTS ENROL(
     studentID INT,
-    courseID  INT,
+    courseCode  VARCHAR(10),
     term      VARCHAR(10) NOT NULL,
     mark      INT DEFAULT NULL,
-    PRIMARY KEY(studentID, courseID, term),
+    PRIMARY KEY(studentID, courseCode, term),
     FOREIGN KEY(studentID) REFERENCES Student(id),
-    FOREIGN KEY(courseID) REFERENCES Course(code)
+    FOREIGN KEY(courseCode) REFERENCES Course(code)
 );
 
 
