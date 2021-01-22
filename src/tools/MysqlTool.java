@@ -11,7 +11,7 @@ public class MysqlTool {
 
     // use Properties to reset the configuration without stopping the program
     static{
-        InputStream configuration = MysqlTool.class.getResourceAsStream("datasource.properties");
+        InputStream configuration = MysqlTool.class.getResourceAsStream("dataSource.properties");
 
         try{
             sqlConf.load(configuration);
