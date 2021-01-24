@@ -5,5 +5,5 @@ import bean.Student;
 
 public interface StudentDao {
 
-    public List<Student> getStudentList(String user, String password);
+    List<Student> getStudentList(String sql, List<Object> param);
 }
